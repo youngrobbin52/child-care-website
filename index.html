@@ -3,30 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Young Robbin Child Care</title>
+    <title>Ms. Robbin's Home Child Care</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-white">
-    <nav class="bg-white border-b p-4 flex justify-between items-center">
-        <div class="text-2xl font-bold text-blue-900">Young Robbin Child Care</div>
-        <div class="text-sm text-gray-600">youngrobbin130@gmail.com</div>
+<body class="bg-white font-sans text-gray-900">
+
+    <nav class="bg-white border-b p-4">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold text-blue-900">Ms. Robbin's Home Child Care</div>
+            <div class="hidden md:block text-sm text-gray-600 text-right">
+                <p>youngrobbin130@gmail.com</p>
+                <p class="font-bold text-blue-600">Newark, New Jersey</p>
+            </div>
+        </div>
     </nav>
 
-    <section class="bg-blue-600 text-white py-20 px-6 text-center">
+    <section class="bg-blue-600 text-white py-16 px-6 text-center">
         <h1 class="text-4xl md:text-6xl font-extrabold mb-4">Quality Care in a Loving Home</h1>
-        <p class="text-xl mb-8 italic text-blue-100 text-pretty">Sponsorship through Programs for Parents (PfP)</p>
+        <p class="text-xl mb-8 opacity-90 italic">Proudly Sponsored by Programs for Parents (PfP)</p>
         
-        <a href="enroll.html" class="bg-yellow-400 text-blue-900 px-10 py-5 rounded-full font-bold text-2xl shadow-xl hover:bg-yellow-300 transition inline-block">
-            Enroll Now
-        </a>
+        <div class="flex flex-col md:flex-row justify-center gap-4">
+            <a href="enroll.html" class="bg-yellow-400 text-blue-900 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:bg-yellow-300 transition">
+                Enroll Now
+            </a>
+            <a href="mailto:youngrobbin130@gmail.com" class="bg-white text-blue-900 px-8 py-4 rounded-full font-bold text-xl shadow-lg hover:bg-gray-100 transition">
+                Email Me
+            </a>
+        </div>
     </section>
 
-    <section class="py-16 px-6 max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Why Choose Us?</h2>
-        <p class="text-gray-600 text-lg leading-relaxed">
-            We provide a safe, nurturing environment for your little ones to grow and learn. 
-            As a Programs for Parents provider, we assist families in obtaining the care they need.
-        </p>
+    <section class="py-16 px-6 max-w-6xl mx-auto">
+        <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Our Services & Care</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="p-8 bg-blue-50 rounded-2xl shadow-sm">
+                <div class="text-5xl mb-4">🍎</div>
+                <h3 class="text-xl font-bold mb-2">Healthy Meals</h3>
+                <p class="text-gray-600">Nutritious breakfast, lunch, and snacks provided daily for all children.</p>
+            </div>
+
+            <div class="p-8 bg-white border-2 border-blue-200 rounded-2xl shadow-md">
+                <div class="text-5xl mb-4">📋</div>
+                <h3 class="text-xl font-bold mb-2">PfP Accepted</h3>
+                <p class="text-gray-600">I am a Programs for Parents provider. We accept subsidies to help with care costs.</p>
+            </div>
+
+            <div class="p-8 bg-blue-50 rounded-2xl shadow-sm">
+                <div class="text-5xl mb-4">🧸</div>
+                <h3 class="text-xl font-bold mb-2">Safe Learning</h3>
+                <p class="text-gray-600">A clean, secure home environment focused on educational play and growth.</p>
+            </div>
+        </div>
     </section>
+
+    <footer class="bg-gray-100 py-8 text-center text-gray-500 text-sm">
+        <p>&copy; 2024 Ms. Robbin's Home Child Care | Newark, NJ</p>
+    </footer>
+
 </body>
 </html>
