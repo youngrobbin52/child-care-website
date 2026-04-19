@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #5: Transportation</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #16a085; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        .checkbox-group { margin: 15px 0; border: 1px solid #eee; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <form name="transportation" method="POST" data-netlify="true">
+        <h1>Item #5: Transportation & Field Trip Permission</h1>
+        
+        <p>I give permission for my child to be transported for the following (check all that apply):</p>
+        
+        <div class="checkbox-group">
+            <input type="checkbox" name="routine_trips" id="routine">
+            <label for="routine">Routine Field Trips (Parks, Library, etc.)</label><br><br>
+            
+            <input type="checkbox" name="emergency_trans" id="emergency">
+            <label for="emergency">Emergency Transportation (Hospital, Fire Evacuation)</label>
+        </div>
+
+        <label>Authorized Pickup Person(s) & Phone Numbers</label>
+        <textarea name="pickup_list" rows="3" placeholder="List names and phone numbers of anyone allowed to pick up your child."></textarea>
+
+        <label>Parent Signature (Electronic)</label>
+        <input type="text" name="trans_sig" required>
+
+        <button type="submit">Submit Transportation Consent</button>
+    </form>
+</body>
+</html>
