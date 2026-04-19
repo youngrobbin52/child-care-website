@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #4: Medication Consent</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #c0392b; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <form name="medication-consent" method="POST" data-netlify="true">
+        <h1>Item #4: Medication Administration Consent</h1>
+        
+        <p>This form must be completed if your child requires any medication (prescription or over-the-counter) while in care.</p>
+
+        <label>Does your child require medication during care hours?</label>
+        <select name="needs_meds">
+            <option value="no">No - Not at this time</option>
+            <option value="yes">Yes - See details below</option>
+        </select>
+
+        <label>Medication Name & Purpose</label>
+        <input type="text" name="med_name" placeholder="e.g., Amoxicillin for ear infection">
+
+        <label>Dosage and Time to be Administered</label>
+        <input type="text" name="dosage_timing" placeholder="e.g., 5ml at 12:00 PM">
+
+        <label>Special Instructions (Refrigeration, etc.)</label>
+        <textarea name="med_instructions" rows="2"></textarea>
+
+        <label>Parent Signature (Electronic)</label>
+        <input type="text" name="med_signature" required>
+
+        <button type="submit">Submit Medication Consent</button>
+    </form>
+</body>
+</html>
