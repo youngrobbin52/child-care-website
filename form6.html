@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #6: Media Release</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        select, input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #2980b9; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        .info { background: #e8f4f8; padding: 15px; border-radius: 5px; margin-bottom: 20px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <form name="media-release" method="POST" data-netlify="true">
+        <h1>Item #6: Media & Photo Release</h1>
+        
+        <div class="info">
+            Our program often documents learning through photos and videos for classroom projects, portfolios, and our school website.
+        </div>
+
+        <label>Photo/Video Permission</label>
+        <select name="photo_permission" required>
+            <option value="">-- Select One --</option>
+            <option value="yes">Yes, I grant permission for all uses</option>
+            <option value="limited">Classroom use only (No social media/website)</option>
+            <option value="no">No, I do not grant any photo/video permission</option>
+        </select>
+
+        <label>Parent Signature (Electronic)</label>
