@@ -2,45 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Step 2: Family & Social History</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #1</title>
     <style>
-        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f7f6; }
-        .form-container { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        label { font-weight: bold; display: block; margin-top: 15px; }
-        textarea, select { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 4px; }
-        .btn-save { background-color: #3498db; color: white; border: none; padding: 15px; width: 100%; cursor: pointer; border-radius: 5px; margin-top: 20px; }
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #27ae60; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
-
-<div class="form-container">
-    <h2>2. Family & Social History</h2>
-    <p>Help us get to know your child better!</p>
-    
-    <form name="social-history" method="POST" data-netlify="true">
-        <label>Has your child attended childcare before?</label>
-        <select name="previous_care">
-            <option value="no">No, this is the first time</option>
-            <option value="yes">Yes</option>
-        </select>
-
-        <label>What comforts your child when they are upset?</label>
-        <textarea name="comfort_methods" rows="3" placeholder="e.g. favorite toy, rocking, singing"></textarea>
-
-        <label>Are there any specific fears (noises, animals, etc.)?</label>
-        <textarea name="fears" rows="2"></textarea>
-
-        <label>Developmental Goals</label>
-        <textarea name="goals" rows="3" placeholder="e.g. Potty training, sharing, vocabulary"></textarea>
-
-        <label>Family Traditions / Holidays</label>
-        <textarea name="traditions" rows="2" placeholder="Anything special your family celebrates?"></textarea>
-
-        <button type="submit" class="btn-save">Save & Continue</button>
+    <form name="enrollment" method="POST" data-netlify="true">
+        <h1>Child Enrollment</h1>
+        <label>Child's Full Name</label><input type="text" name="child_name" required>
+        <label>Date of Birth</label><input type="date" name="dob" required>
+        <label>Family Structure</label><textarea name="family_history"></textarea>
+        <label>Life Events</label><textarea name="life_events"></textarea>
+        <button type="submit">Submit Item #1</button>
     </form>
-    <br>
-    <a href="dashboard.html">← Back to Dashboard</a>
-</div>
-
 </body>
 </html>
