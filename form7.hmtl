@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #7: Handbook & Tuition</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .agreement-box { background: #fdfdfd; padding: 15px; height: 120px; overflow-y: scroll; border: 1px solid #ddd; margin-bottom: 20px; font-size: 0.85em; }
+        button { background: #2c3e50; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <form name="handbook-tuition" method="POST" data-netlify="true">
+        <h1>Item #7: Handbook & Tuition Agreement</h1>
+        
+        <p><strong>Parent Handbook Acknowledgment</strong></p>
+        <div class="agreement-box">
+            I acknowledge that I have received, read, and understand the Parent Handbook. I agree to comply with all policies regarding health, safety, attendance, and program operations. I understand that failure to follow these policies may result in termination of care.
+        </div>
+
+        <p><strong>Financial & Tuition Agreement</strong></p>
+        <div class="agreement-box">
+            I agree to pay the agreed-upon tuition rate on time each week/month. I understand that a late fee will be applied if payment is not received by the deadline. No credits are given for days missed due to illness or personal vacation.
+        </div>
+
+        <label>Anticipated Start Date</label>
+        <input type="date" name="start_date" required>
+
+        <label>Parent Signature (Electronic)</label>
+        <input type="text" name="final_sig" required>
+
+        <button type="submit">Submit Final Agreement</button>
+    </form>
+</body>
+</html>
