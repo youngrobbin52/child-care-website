@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item #1: Child Enrollment & Family History</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h3 { color: #2980b9; margin-top: 25px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 30px; cursor: pointer; }
+        .submit-btn:hover { background: #219150; }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h1>Item #1: Child Enrollment</h1>
+    <p>Please complete this form to begin the university-standard enrollment process.</p>
+
+    <form name="enrollment-data" method="POST" data-netlify="true">
+        <h3>Child Information</h3>
+        <label>Child's Full Legal Name</label>
+        <input type="text" name="child_name" required>
+
+        <label>Nickname</label>
+        <input type="text" name="nickname">
+
+        <label>Date of Birth</label>
+        <input type="date" name="dob" required>
+
+        <h3>Family & Social History</h3>
+        <label>Primary Language Spoken at Home</label>
+        <input type="text" name="language" placeholder="English, Spanish, etc.">
+
+        <label>Family Structure (e.g., Lives with both parents, joint custody)</label>
+        <textarea name="family_structure" rows="3"></textarea>
+
+        <label>Are there any significant life events we should know about? (New sibling, recent move, etc.)</label>
+        <textarea name="life_events" rows="3"></textarea>
+
+        <label>Does the child have a specific "comfort item" (blanket, toy)?</label>
+        <input type="text" name="comfort_item">
+
+        <button type="submit" class="submit-btn">Submit Enrollment Details</button>
+    </form>
+</div>
+
+</body>
+</html>
