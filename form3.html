@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #3: Health Records</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #8e44ad; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <form name="health-records" method="POST" data-netlify="true">
+        <h1>Item #3: Health Records & Immunizations</h1>
+        
+        <label>Date of Last Physical Exam</label>
+        <input type="date" name="last_physical" required>
+
+        <label>Are immunizations up to date?</label>
+        <select name="immunizations_status">
+            <option value="yes">Yes - Records on file</option>
+            <option value="pending">Pending - Will provide copy</option>
+            <option value="exempt">Exempt (Religious/Medical)</option>
+        </select>
+
+        <label>Any known allergies or dietary restrictions?</label>
+        <input type="text" name="allergies" placeholder="None or describe">
+
+        <label>Parent Signature</label>
+        <input type="text" name="health_signature" required>
+
+        <button type="submit">Submit Health Records</button>
+    </form>
+</body>
+</html>
