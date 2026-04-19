@@ -3,21 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form #1</title>
+    <title>Enrollment Checklist</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-        input, textarea { width: 100%; padding: 10px; margin: 10px 0; }
-        button { background: #27ae60; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; }
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f9f9f9; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
+        .btn { display: inline-block; background: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; margin-top: 5px; font-size: 14px; }
+        .pending { color: #e67e22; font-weight: bold; }
     </style>
 </head>
 <body>
-    <form name="enrollment" method="POST" data-netlify="true">
-        <h1>Child Enrollment</h1>
-        <label>Child's Full Name</label><input type="text" name="child_name" required>
-        <label>Date of Birth</label><input type="date" name="dob" required>
-        <label>Family Structure</label><textarea name="family_history"></textarea>
-        <label>Life Events</label><textarea name="life_events"></textarea>
-        <button type="submit">Submit Item #1</button>
-    </form>
+<div class="card">
+    <h1>Enrollment Checklist</h1>
+    <p>Please complete all 7 items below:</p>
+
+    <div class="item">
+        <span>1. Child Enrollment & History</span>
+        <a href="form1.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>2. Emergency Authorization</span>
+        <a href="form2.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>3. Health Records</span>
+        <a href="form3.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>4. Medication Consent</span>
+        <a href="form4.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>5. Transportation</span>
+        <a href="form5.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>6. Media Release</span>
+        <a href="form6.html" class="btn">Start</a>
+    </div>
+
+    <div class="item">
+        <span>7. Handbook Agreement</span>
+        <a href="form7.html" class="btn">Start</a>
+    </div>
+</div>
 </body>
 </html>
