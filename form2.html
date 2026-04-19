@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #2: Emergency Medical</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #e67e22; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <form name="emergency-medical" method="POST" data-netlify="true">
+        <h1>Item #2: Emergency Medical Authorization</h1>
+        <label>Physician / Clinic Name</label><input type="text" name="physician" required>
+        <label>Physician Phone</label><input type="tel" name="phone" required>
+        <label>Preferred Hospital</label><input type="text" name="hospital" required>
+        <label>Insurance Carrier</label><input type="text" name="insurance">
+        <label>Parent Signature</label><input type="text" name="sig" required>
+        <button type="submit">Submit Emergency Authorization</button>
+    </form>
+</body>
+</html>
+2. Create form4.html (Medication Consent)
+Since you already have #1, #2, and #3 done, here is the next one.
+
+Create a new file named form4.html and paste this:
+
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form #4: Medication Consent</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #c0392b; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <form name="medication-consent" method="POST" data-netlify="true">
+        <h1>Item #4: Medication Administration Consent</h1>
+        <p>Does your child require medication to be administered during care?</p>
+        <select name="needs_meds">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+        </select>
+        <label>Medication Name (if applicable)</label><input type="text" name="med_name">
+        <label>Dosage/Time</label><input type="text" name="dosage">
+        <label>Parent Signature</label><input type="text" name="med_sig" required>
+        <button type="submit">Submit Medication Consent</button>
+    </form>
+</body>
+</html>
