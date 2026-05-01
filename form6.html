@@ -1,9 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 6: Instructions for Completing UCHR</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
 <div class="form-card">
-    <h1>7. Medical Contraindication for Immunizations</h1>
-    <form action="[https://formspree.io/f/xgodeqzv](https://formspree.io/f/xgodeqzv)" method="POST">
-        <label>List medical reasons for vaccine exemption (or type N/A):</label>
-        <textarea name="medical_exemption" rows="3" required style="width: 100%; padding: 10px;"></textarea>
-        <button type="submit" class="submit-btn" style="background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; margin-top: 20px;">Submit Form 7</button>
-    </form>
-    <a href="form7.html" style="display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none;">GO TO: Form 8 - Religious Exemption →</a>
+
+<h1>Instructions for Completing UCHR</h1>
+
+<p>
+Please read the following instructions carefully before proceeding to the next form.
+</p>
+
+<p>
+The Universal Child Health Record (UCHR) must be completed accurately and fully. 
+All medical information provided must be up to date and verified by a healthcare provider if required.
+</p>
+
+<p>
+If you are unsure about any section, please contact your provider before continuing.
+</p>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to Form 7 -->
+<input type="hidden" name="_next" value="form7.html">
+
+<label>
+<input type="checkbox" name="instructions_acknowledged" required>
+I have read and understand the instructions for completing the UCHR
+</label>
+
+<button type="submit">Continue to Form 7</button>
+
+</form>
+
 </div>
+
+</body>
+</html>
