@@ -3,38 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form #4: Medication Consent</title>
+    <title>Form 5: Universal Child Health Record</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-        input, select, textarea { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { background: #c0392b; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; font-weight: bold; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 30px; cursor: pointer; }
+        .next-link { display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
-    <form action="form5.html" method="POST">
-        <h1>Item #4: Medication Administration Consent</h1>
-        
-        <p>This form must be completed if your child requires any medication (prescription or over-the-counter) while in care.</p>
-
-        <label>Does your child require medication during care hours?</label>
-        <select name="needs_meds">
-            <option value="no">No - Not at this time</option>
-            <option value="yes">Yes - See details below</option>
-        </select>
-
-        <label>Medication Name & Purpose</label>
-        <input type="text" name="med_name" placeholder="e.g., Amoxicillin for ear infection">
-
-        <label>Dosage and Time to be Administered</label>
-        <input type="text" name="dosage_timing" placeholder="e.g., 5ml at 12:00 PM">
-
-        <label>Special Instructions (Refrigeration, etc.)</label>
-        <textarea name="med_instructions" rows="2"></textarea>
-
-        <label>Parent Signature (Electronic)</label>
-        <input type="text" name="med_signature" required>
-
-        <button type="submit">Submit Medication Consent</button>
+<div class="form-card">
+    <h1>5. Universal Child Health Record</h1>
+    <form action="https://formspree.io/f/xlgzrdnn" method="POST">
+        <label>Physician Name</label>
+        <input type="text" name="physician">
+        <label>Last Physical Exam Date</label>
+        <input type="date" name="last_exam">
+        <button type="submit" class="submit-btn">Submit Form 5</button>
     </form>
+    <a href="form5.html" class="next-link">GO TO: Form 6 - Instructions for UCHR →</a>
+</div>
 </body>
 </html>
