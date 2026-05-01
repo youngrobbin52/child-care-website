@@ -1,20 +1,33 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Enrollment Start</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment - Page 1</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+<body>
+    <div class="form-container">
+        <h2>Child Information (Part 1)</h2>
+        <!-- This line below is the fix with your real ID -->
+        <form action="https://formspree.io/f/xgodeqzv" method="POST">
+            
+            <label for="child-name">Child's First & Last Name:</label>
+            <input type="text" id="child-name" name="child_name" required>
 
-<body style="font-family:sans-serif; text-align:center; padding:40px;">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
 
-<h1>Welcome to Enrollment</h1>
+            <label for="start-date">Desired Start Date:</label>
+            <input type="date" id="start-date" name="start_date" required>
 
-<p>Please begin the medical packet below.</p>
+            <label for="parent-email">Parent Email Address (For Confirmation):</label>
+            <input type="email" id="parent-email" name="email" required>
 
-<a href="form1.html">
-    <button style="padding:15px; font-size:18px;">
-        Start Enrollment Packet
-    </button>
-</a>
-
+            <!-- This tells Formspree where to send the parent AFTER they hit Next -->
+            <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/page2.html">
+            
+            <button type="submit">Next Page</button>
+        </form>
+    </div>
 </body>
 </html>
