@@ -1,143 +1,146 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Family Child Care</title>
+    <title>Your Business Name | Newark Home Child Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2980b9; --accent: #27ae60; --bg: #fdfdfd; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; color: #333; background: var(--bg); }
-        
-        /* Navigation */
-        header { 
-            background: #fff; padding: 20px 5%; display: flex; 
-            justify-content: space-between; align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;
-        }
-        .logo { font-size: 1.6rem; font-weight: bold; color: var(--primary); }
-        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 600; cursor: pointer; }
-        nav a:hover { color: var(--primary); }
-
-        /* Sections */
-        section { display: none; padding: 60px 10%; animation: fadeIn 0.4s; }
-        .active { display: block; }
-
-        /* Home/Hero Area */
-        .hero { text-align: center; background: #e8f4f8; padding: 100px 20px; border-radius: 20px; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
-        .mission-statement { 
-            max-width: 800px; margin: 0 auto; font-size: 1.4rem; 
-            font-style: italic; color: #444; border-left: 6px solid var(--primary); 
-            padding-left: 25px; background: white; padding: 30px; 
-        }
-
-        /* Information Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-        .card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
-
-        /* Enrollment Form Area */
-        .enrollment-container { background: white; padding: 40px; border-radius: 10px; border: 2px solid #eee; }
-        input, textarea, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        .btn { background: var(--accent); color: white; padding: 15px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
-
+        body { font-family: 'Quicksand', sans-serif; background-color: #fdfbf7; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .gradient-text { background: linear-gradient(to right, #4a90e2, #63b3ed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="logo">Family Child Care</div>
-    <nav>
-        <a onclick="show('home')">Home</a>
-        <a onclick="show('about')">About Me</a>
-        <a onclick="show('resources')">Resources</a>
-        <a onclick="show('enroll')" style="background: var(--accent); color: white; padding: 10px 20px; border-radius: 5px;">Enroll Now</a>
-    </nav>
-</header>
-
-<!-- 1. HOME SECTION -->
-<section id="home" class="active">
-    <div class="hero">
-        <h1>Welcome to Family Child Care</h1>
-        <div class="mission-statement">
-            "Insert your professional mission statement here. For example: To provide a warm, secure environment where children learn through play and exploration."
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold gradient-text">Your Business Name</div>
+        <div class="hidden md:flex space-x-8 font-semibold text-gray-600">
+            <button onclick="openTab('home')" class="hover:text-blue-500">Home</button>
+            <button onclick="openTab('about')" class="hover:text-blue-500">About Me</button>
+            <button onclick="openTab('resources')" class="hover:text-blue-500">Resources</button>
+            <button onclick="openTab('enroll')" class="bg-orange-400 text-white px-6 py-2 rounded-full hover:bg-orange-500 transition">Enroll Now</button>
         </div>
     </div>
-    <div class="grid">
-        <div class="card">
-            <h3>Our Space</h3>
-            <p>Upload a picture of your daycare area here. This builds trust with parents immediately.</p>
-        </div>
-        <div class="card">
-            <h3>Our Curriculum</h3>
-            <p>Details about how you help children grow and learn daily.</p>
+</nav>
+
+<!-- HOME SECTION -->
+<div id="home" class="tab-content active">
+    <div class="relative h-[500px] flex items-center justify-center bg-blue-50">
+        <img src="https://images.unsplash.com/photo-1540479859555-17af45c78602?auto=format&fit=crop&q=80&w=2000" class="absolute inset-0 w-full h-full object-cover opacity-30">
+        <div class="relative text-center px-4">
+            <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">Nurturing Tomorrow's Leaders</h1>
+            <p class="text-xl text-gray-700 max-w-2xl mx-auto font-medium">Safe, Loving, and Educational Child Care in the Heart of Newark, NJ.</p>
         </div>
     </div>
-</section>
 
-<!-- 2. ABOUT SECTION -->
-<section id="about">
-    <h2>Details & Philosophy</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>About the Provider</h3>
-            <p>Add your years of experience, certifications, and why you started your home child care.</p>
-        </div>
-        <div class="card">
-            <h3>Program Details</h3>
-            <p><strong>Hours:</strong> 7:00 AM - 6:00 PM</p>
-            <p><strong>Ages Served:</strong> 6 weeks to 5 years</p>
-            <p><strong>Location:</strong> Newark, NJ</p>
+    <div class="max-w-4xl mx-auto -mt-16 relative z-10 px-4">
+        <div class="bg-white p-10 rounded-3xl shadow-xl border-t-8 border-blue-400">
+            <h2 class="text-3xl font-bold text-center mb-6 text-gray-800">Our Mission</h2>
+            <p class="text-2xl italic text-gray-600 text-center leading-relaxed">
+                "To provide a home-away-from-home where every child is empowered to learn, play, and grow in a secure and culturally rich environment."
+            </p>
         </div>
     </div>
-</section>
 
-<!-- 3. RESOURCES SECTION -->
-<section id="resources">
-    <h2>Parent Resources</h2>
-    <div class="grid">
-        <div class="card">
-            <h3>Helpful Links</h3>
-            <ul>
-                <li>NJ Child Care Subsidy Info</li>
-                <li>Healthy Meal Planning</li>
-                <li>Developmental Milestones</li>
-            </ul>
+    <div class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-3 gap-8">
+        <div class="bg-blue-100 p-8 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🏠</div>
+            <h3 class="text-xl font-bold mb-2">Safe Haven</h3>
+            <p>State-licensed facility with strict safety and sanitization protocols.</p>
+        </div>
+        <div class="bg-green-100 p-8 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-xl font-bold mb-2">Play to Learn</h3>
+            <p>Curriculum designed to spark curiosity and early literacy.</p>
+        </div>
+        <div class="bg-orange-100 p-8 rounded-2xl text-center">
+            <div class="text-4xl mb-4">🍎</div>
+            <h3 class="text-xl font-bold mb-2">Healthy Growth</h3>
+            <p>Nutritious home-cooked meals following USDA guidelines.</p>
         </div>
     </div>
-</section>
+</div>
 
-<!-- 4. ENROLLMENT SECTION (FORMSPREE GOES HERE) -->
-<section id="enroll">
-    <div class="enrollment-container">
-        <h2>Enrollment Packet</h2>
-        <p>Please complete the following forms to secure your child's spot.</p>
+<!-- ABOUT SECTION -->
+<div id="about" class="tab-content container mx-auto px-4 py-20">
+    <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <img src="https://images.unsplash.com/photo-1595152772835-219674b2a8a6?auto=format&fit=crop&q=80&w=1000" class="rounded-3xl shadow-lg">
+        </div>
+        <div class="md:w-1/2">
+            <h2 class="text-4xl font-bold mb-6 text-blue-600">Meet the Director</h2>
+            <p class="text-lg text-gray-700 mb-6">With over [Number] years of experience in early childhood education, I founded Your Business Name to serve the Newark community with high-quality home child care.</p>
+            <div class="space-y-4">
+                <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm">
+                    <span class="text-blue-500 font-bold">Hours:</span> 7:30 AM - 5:30 PM
+                </div>
+                <div class="flex items-center gap-4 bg-white p-4 rounded-xl shadow-sm">
+                    <span class="text-blue-500 font-bold">Ages:</span> 6 Weeks - 5 Years
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RESOURCES SECTION -->
+<div id="resources" class="tab-content container mx-auto px-4 py-20">
+    <h2 class="text-4xl font-bold text-center mb-12">Parent Resources</h2>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <a href="#" class="block p-8 bg-white rounded-2xl shadow hover:shadow-md transition border-l-4 border-green-400">
+            <h3 class="text-xl font-bold mb-2">NJ Child Care Subsidy</h3>
+            <p class="text-gray-600">Learn about financial assistance through Programs for Parents.</p>
+        </a>
+        <a href="#" class="block p-8 bg-white rounded-2xl shadow hover:shadow-md transition border-l-4 border-blue-400">
+            <h3 class="text-xl font-bold mb-2">Daily Schedule</h3>
+            <p class="text-gray-600">View our routine for infants, toddlers, and preschoolers.</p>
+        </a>
+    </div>
+</div>
+
+<!-- ENROLLMENT SECTION -->
+<div id="enroll" class="tab-content container mx-auto px-4 py-20">
+    <div class="max-w-2xl mx-auto bg-white p-10 rounded-3xl shadow-2xl border border-gray-100">
+        <h2 class="text-3xl font-bold mb-2">Digital Enrollment</h2>
+        <p class="text-gray-500 mb-8">Fill out the information below to begin the registration process.</p>
         
-        <!-- FORMSPREE FORM START -->
-        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
-            <h3>Page 1: Basic Information</h3>
-            <label>Child's Full Name</label>
-            <input type="text" name="child_name" required>
-            
-            <label>Parent/Guardian Name</label>
-            <input type="text" name="parent_name" required>
-            
-            <label>Contact Email</label>
-            <input type="email" name="email" required>
-
-            <!-- We will add the rest of the 20 pages here -->
-            
-            <button type="submit" class="btn">Send Enrollment Request</button>
+        <!-- Replace YOUR_ID with your Formspree ID -->
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" class="space-y-6">
+            <div>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Child's Name</label>
+                <input type="text" name="child_name" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-400 outline-none">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Date of Birth</label>
+                    <input type="date" name="dob" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-gray-700 mb-2">Requested Start Date</label>
+                    <input type="date" name="start_date" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl">
+                </div>
+            </div>
+            <div>
+                <label class="block text-sm font-bold text-gray-700 mb-2">Parent Email</label>
+                <input type="email" name="email" required class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl">
+            </div>
+            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 shadow-lg transition">Submit 20-Page Packet</button>
         </form>
-        <!-- FORMSPREE FORM END -->
     </div>
-</section>
+</div>
 
 <script>
-    function show(id) {
-        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-        document.getElementById(id).classList.add('active');
+    function openTab(tabId) {
+        const contents = document.getElementsByClassName('tab-content');
+        for (let content of contents) {
+            content.classList.remove('active');
+        }
+        document.getElementById(tabId).classList.add('active');
         window.scrollTo(0,0);
     }
 </script>
