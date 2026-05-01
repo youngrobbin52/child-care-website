@@ -1,13 +1,12 @@
-<div class="form-card">
-    <h1>4. Emergency Treatment Information and Authorization</h1>
-    <form action="[https://formspree.io/f/xgodeqzv](https://formspree.io/f/xgodeqzv)" method="POST">
-        <label>Hospital Preference</label>
-        <input type="text" name="hospital" required>
-        <label>Health Insurance Company</label>
-        <input type="text" name="insurance">
-        <label>I authorize emergency treatment (Signature):</label>
-        <input type="text" name="emergency_sig" required>
-        <button type="submit" class="submit-btn">Submit Form 4</button>
-    </form>
-    <a href="form4.html" class="next-link">GO TO: Form 5 - Universal Child Health Record →</a>
-</div>
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+  <h2>Page 4: Emergency Contacts</h2>
+  <label>Emergency Contact #1 Name:</label>
+  <input type="text" name="emergency_1_name" required>
+  <label>Phone Number:</label>
+  <input type="tel" name="emergency_1_phone" required>
+  <label>Relationship to Child:</label>
+  <input type="text" name="emergency_1_rel" required>
+  
+  <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/page5.html">
+  <button type="submit">Next Page (5 of 12)</button>
+</form>
