@@ -1,14 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 11: Information to Parents (Page 2)</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
 <div class="form-card">
-    <h1>12. Parent’s Signature Form Receipt of Information To Parent Statement</h1>
-    <form action="[https://formspree.io/f/xgodeqzv](https://formspree.io/f/xgodeqzv)" method="POST">
-        <p>I certify that I have received all statements and information forms listed in this 12-form packet.</p>
-        <label>Final Digital Signature</label>
-        <input type="text" name="final_sig" required style="width: 100%; padding: 10px;">
-        <label>Date</label>
-        <input type="date" name="final_date" required style="width: 100%; padding: 10px;">
-        <button type="submit" class="submit-btn" style="background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; margin-top: 20px;">Complete Full Packet</button>
-    </form>
-    <hr style="margin-top: 30px;">
-    <p style="text-align:center;"><strong>You are finished!</strong></p>
-    <a href="index.html" style="display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none;">Return to Home Page</a>
+
+<h1>Information to Parents (Page 2)</h1>
+
+<p>
+This page continues important policies and procedures related to enrollment, care expectations, and program guidelines.
+</p>
+
+<p>
+By continuing, you acknowledge that you have reviewed all required program information.
+</p>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to final form 12 -->
+<input type="hidden" name="_next" value="form12.html">
+
+<label>
+<input type="checkbox" name="final_read_confirm" required>
+I confirm I have read and understand all provided information
+</label>
+
+<button type="submit">Continue to Signature Form</button>
+
+</form>
+
 </div>
+
+</body>
+</html>
