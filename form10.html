@@ -1,8 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 10: Information to Parents (Page 1)</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
 <div class="form-card">
-    <h1>11. Information To Parents about Family Child Care Registration (Page 2)</h1>
-   <form action="[https://formspree.io/f/xgodeqzv](https://formspree.io/f/xgodeqzv)" method="POST">
-        <label><input type="checkbox" name="fcc_page2" required> I acknowledge receipt of Page 2</label>
-        <button type="submit" class="submit-btn" style="background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; margin-top: 20px;">Submit Form 11</button>
-    </form>
-    <a href="form11.html" style="display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none;">GO TO: Form 12 - Final Signature Form →</a>
+
+<h1>Information to Parents (Page 1)</h1>
+
+<p>
+This document provides important information regarding family child care registration requirements, policies, and procedures.
+</p>
+
+<p>
+Please read carefully before proceeding to the next page.
+</p>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to Form 11 -->
+<input type="hidden" name="_next" value="form11.html">
+
+<label>
+<input type="checkbox" name="read_confirm" required>
+I confirm I have read and understand this information
+</label>
+
+<button type="submit">Continue to Page 2</button>
+
+</form>
+
 </div>
+
+</body>
+</html>
