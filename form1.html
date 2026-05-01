@@ -1,9 +1,87 @@
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-    
-    <!-- All your other questions go here -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 1: Mandatory Child Information Checklist</title>
 
-    <!-- Update the value below to the name of the NEXT page -->
-    <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/page3.html">
-    
-    <button type="submit">Next</button>
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+ul {
+    margin-top: 15px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-card">
+
+<h1>Mandatory Child Information Checklist</h1>
+
+<p>Please confirm you have the following required information before continuing:</p>
+
+<ul>
+    <li>Child’s full legal name</li>
+    <li>Date of birth</li>
+    <li>Home address</li>
+    <li>Emergency contact information</li>
+    <li>Medical and allergy information</li>
+</ul>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to Formspree -->
+<input type="hidden" name="_next" value="form2.html">
+
+<label>
+<input type="checkbox" name="checklist_confirm" required>
+I confirm I have all required information ready
+</label>
+
+<button type="submit">Continue to Form 2</button>
+
 </form>
+
+</div>
+
+</body>
+</html>
