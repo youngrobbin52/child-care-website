@@ -1,9 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 7: Medical Contraindication for Immunizations</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
 <div class="form-card">
-    <h1>8. Religious Exemption From Immunizations</h1>
-    <form action="[https://formspree.io/f/xgodeqzv](https://formspree.io/f/xgodeqzv)" method="POST">
-        <label>Statement of Religious Exemption (or type N/A):</label>
-        <textarea name="religious_statement" rows="3" required style="width: 100%; padding: 10px;"></textarea>
-        <button type="submit" class="submit-btn" style="background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; margin-top: 20px;">Submit Form 8</button>
-    </form>
-    <a href="form8.html" style="display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none;">GO TO: Form 9 - Social Media Policy →</a>
+
+<h1>Medical Contraindication for Immunizations</h1>
+
+<p>Please complete if your child has medical reasons for immunization exemption.</p>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to Form 8 -->
+<input type="hidden" name="_next" value="form8.html">
+
+<label>Child's Full Name</label>
+<input type="text" name="child_name" required>
+
+<label>Date of Birth</label>
+<input type="date" name="dob" required>
+
+<label>Medical Condition Description</label>
+<textarea name="medical_condition" rows="4"></textarea>
+
+<label>Physician Statement (if applicable)</label>
+<textarea name="physician_statement" rows="4"></textarea>
+
+<label>
+<input type="checkbox" name="acknowledgment" required>
+I certify that the above information is accurate
+</label>
+
+<button type="submit">Continue to Form 8</button>
+
+</form>
+
 </div>
+
+</body>
+</html>
