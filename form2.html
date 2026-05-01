@@ -1,35 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment - Page 3</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 2: Child’s Enrollment Information</title>
+
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
+
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 25px;
+    cursor: pointer;
+}
+</style>
 </head>
+
 <body>
-    <div class="form-container">
-        <h2>Parent/Guardian Information (Part 3)</h2>
-        
-        <!-- This sends the data to your email -->
-        <form action="https://formspree.io/f/xgodeqzv" method="POST">
-            
-            <!-- Example Questions - You can change these to whatever you need for Page 3 -->
-            <label for="parent-name">Parent/Guardian Full Name:</label>
-            <input type="text" id="parent-name" name="parent_full_name" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone_number" required>
+<div class="form-card">
 
-            <label for="address">Home Address:</label>
-            <input type="text" id="address" name="address" required>
+<h1>Child’s Enrollment Information</h1>
 
-            <!-- IMPORTANT: This tells the form to go to Page 4 next -->
-            <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/page4.html">
-            
-            <div class="button-group">
-                <button type="submit">Next Page</button>
-            </div>
-        </form>
-    </div>
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<!-- sends to Form 3 -->
+<input type="hidden" name="_next" value="form3.html">
+
+<label>Child's Full Legal Name</label>
+<input type="text" name="child_full_name" required>
+
+<label>Date of Birth</label>
+<input type="date" name="child_dob" required>
+
+<label>Gender</label>
+<input type="text" name="gender">
+
+<label>Home Address</label>
+<input type="text" name="address" required>
+
+<label>Enrollment Date</label>
+<input type="date" name="enrollment_date" required>
+
+<button type="submit">Continue to Form 3</button>
+
+</form>
+
+</div>
+
 </body>
 </html>
