@@ -1,113 +1,146 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NJ Enrollment Portal</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <title>Family Child Care</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; background: #f4f7f6; padding: 20px; max-width: 800px; margin: auto; }
-        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        h1, h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .form-section { display: none; } /* Hidden until login */
+        :root { --primary: #2980b9; --accent: #27ae60; --bg: #fdfdfd; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; margin: 0; color: #333; background: var(--bg); }
+        
+        /* Navigation */
+        header { 
+            background: #fff; padding: 20px 5%; display: flex; 
+            justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100;
+        }
+        .logo { font-size: 1.6rem; font-weight: bold; color: var(--primary); }
+        nav a { margin-left: 20px; text-decoration: none; color: #555; font-weight: 600; cursor: pointer; }
+        nav a:hover { color: var(--primary); }
+
+        /* Sections */
+        section { display: none; padding: 60px 10%; animation: fadeIn 0.4s; }
         .active { display: block; }
-        label { display: block; margin: 15px 0 5px; font-weight: bold; }
-        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px; }
-        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; }
-        .nav-buttons { display: flex; gap: 10px; margin-top: 20px; }
-        #login-form { max-width: 400px; margin: 100px auto; }
+
+        /* Home/Hero Area */
+        .hero { text-align: center; background: #e8f4f8; padding: 100px 20px; border-radius: 20px; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 20px; }
+        .mission-statement { 
+            max-width: 800px; margin: 0 auto; font-size: 1.4rem; 
+            font-style: italic; color: #444; border-left: 6px solid var(--primary); 
+            padding-left: 25px; background: white; padding: 30px; 
+        }
+
+        /* Information Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 30px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+
+        /* Enrollment Form Area */
+        .enrollment-container { background: white; padding: 40px; border-radius: 10px; border: 2px solid #eee; }
+        input, textarea, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
+        .btn { background: var(--accent); color: white; padding: 15px 30px; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
 </head>
 <body>
 
-    <div id="login-form" class="container">
-        <h2>Portal Login</h2>
-        <p>Parents & Admin Login Here</p>
-        <input type="email" id="email" placeholder="Email Address">
-        <button onclick="handleLogin()">Sign In / Access Forms</button>
-        <p id="msg"></p>
+<header>
+    <div class="logo">Family Child Care</div>
+    <nav>
+        <a onclick="show('home')">Home</a>
+        <a onclick="show('about')">About Me</a>
+        <a onclick="show('resources')">Resources</a>
+        <a onclick="show('enroll')" style="background: var(--accent); color: white; padding: 10px 20px; border-radius: 5px;">Enroll Now</a>
+    </nav>
+</header>
+
+<!-- 1. HOME SECTION -->
+<section id="home" class="active">
+    <div class="hero">
+        <h1>Welcome to Family Child Care</h1>
+        <div class="mission-statement">
+            "Insert your professional mission statement here. For example: To provide a warm, secure environment where children learn through play and exploration."
+        </div>
     </div>
+    <div class="grid">
+        <div class="card">
+            <h3>Our Space</h3>
+            <p>Upload a picture of your daycare area here. This builds trust with parents immediately.</p>
+        </div>
+        <div class="card">
+            <h3>Our Curriculum</h3>
+            <p>Details about how you help children grow and learn daily.</p>
+        </div>
+    </div>
+</section>
 
-    <div id="main-content" class="container" style="display:none;">
-        <header>
-            <h1>NJ State Enrollment Packet</h1>
-            <p>Complete all 20 pages. Your data is secured via Supabase.</p>
-        </header>
+<!-- 2. ABOUT SECTION -->
+<section id="about">
+    <h2>Details & Philosophy</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>About the Provider</h3>
+            <p>Add your years of experience, certifications, and why you started your home child care.</p>
+        </div>
+        <div class="card">
+            <h3>Program Details</h3>
+            <p><strong>Hours:</strong> 7:00 AM - 6:00 PM</p>
+            <p><strong>Ages Served:</strong> 6 weeks to 5 years</p>
+            <p><strong>Location:</strong> Newark, NJ</p>
+        </div>
+    </div>
+</section>
 
-        <form action="https://formspree.io/f/your_form_id" method="POST">
+<!-- 3. RESOURCES SECTION -->
+<section id="resources">
+    <h2>Parent Resources</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Helpful Links</h3>
+            <ul>
+                <li>NJ Child Care Subsidy Info</li>
+                <li>Healthy Meal Planning</li>
+                <li>Developmental Milestones</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- 4. ENROLLMENT SECTION (FORMSPREE GOES HERE) -->
+<section id="enroll">
+    <div class="enrollment-container">
+        <h2>Enrollment Packet</h2>
+        <p>Please complete the following forms to secure your child's spot.</p>
+        
+        <!-- FORMSPREE FORM START -->
+        <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST">
+            <h3>Page 1: Basic Information</h3>
+            <label>Child's Full Name</label>
+            <input type="text" name="child_name" required>
             
-            <div class="form-page active" id="page1">
-                <h2>Page 1: Child Identity</h2>
-                <label>Child's Full Name</label>
-                <input type="text" name="child_name" required>
-                <label>Date of Birth</label>
-                <input type="date" name="child_dob" required>
-                <label>Home Address</label>
-                <textarea name="address"></textarea>
-                <button type="button" onclick="nextPage(2)">Next Page</button>
-            </div>
+            <label>Parent/Guardian Name</label>
+            <input type="text" name="parent_name" required>
+            
+            <label>Contact Email</label>
+            <input type="email" name="email" required>
 
-            <div class="form-page" id="page2" style="display:none;">
-                <h2>Page 2: Medical Information</h2>
-                <label>Primary Physician</label>
-                <input type="text" name="doctor_name">
-                <label>Allergies / Medical Conditions</label>
-                <textarea name="medical_notes"></textarea>
-                <div class="nav-buttons">
-                    <button type="button" onclick="nextPage(1)">Back</button>
-                    <button type="button" onclick="nextPage(3)">Next Page</button>
-                </div>
-            </div>
-
-            <div class="form-page" id="page3" style="display:none;">
-                <h2>Page 3: State Policy Agreements</h2>
-                <label><input type="checkbox" name="expulsion_policy" required> I have received the Expulsion Policy</label>
-                <label><input type="checkbox" name="info_to_parents" required> I have received the Information to Parents Statement</label>
-                <div class="nav-buttons">
-                    <button type="button" onclick="nextPage(2)">Back</button>
-                    <button type="button" onclick="nextPage(4)">Next Page</button>
-                </div>
-            </div>
-
-            <div class="form-page" id="page4" style="display:none;">
-                <h2>Final Page: Digital Signature</h2>
-                <label>Parent/Guardian Signature (Type Name)</label>
-                <input type="text" name="signature" required>
-                <label>Date</label>
-                <input type="date" name="sign_date" required>
-                
-                <div class="nav-buttons">
-                    <button type="button" onclick="nextPage(3)">Back</button>
-                    <button type="submit">SUBMIT COMPLETED PACKET</button>
-                </div>
-            </div>
+            <!-- We will add the rest of the 20 pages here -->
+            
+            <button type="submit" class="btn">Send Enrollment Request</button>
         </form>
+        <!-- FORMSPREE FORM END -->
     </div>
+</section>
 
-    <script>
-        // NAVIGATION LOGIC
-        function nextPage(num) {
-            document.querySelectorAll('.form-page').forEach(p => p.style.display = 'none');
-            document.getElementById('page' + num).style.display = 'block';
-        }
+<script>
+    function show(id) {
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+        window.scrollTo(0,0);
+    }
+</script>
 
-        // SUPABASE LOGIN LOGIC
-        const _supabase = supabase.createClient('YOUR_SUPABASE_URL', 'YOUR_SUPABASE_ANON_KEY');
-
-        async function handleLogin() {
-            const email = document.getElementById('email').value;
-            // This sends a "Magic Link" so parents don't need to remember a password
-            const { error } = await _supabase.auth.signInWithOtp({ email });
-            
-            if (error) {
-                document.getElementById('msg').innerText = "Error: " + error.message;
-            } else {
-                document.getElementById('msg').innerText = "Check your email for the login link!";
-                // For demonstration, we show the form:
-                document.getElementById('login-form').style.display = 'none';
-                document.getElementById('main-content').style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
