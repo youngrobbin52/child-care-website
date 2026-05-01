@@ -3,34 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form #3: Health Records</title>
+    <title>Form 4: Emergency Treatment Information</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; }
-        input, select { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #8e44ad; color: white; padding: 15px; width: 100%; border: none; cursor: pointer; border-radius: 5px; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        .submit-btn { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 30px; cursor: pointer; }
+        .next-link { display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
-    <form action="form4.html" method="POST">
-        <h1>Item #3: Health Records & Immunizations</h1>
-        
-        <label>Date of Last Physical Exam</label>
-        <input type="date" name="last_physical" required>
-
-        <label>Are immunizations up to date?</label>
-        <select name="immunizations_status">
-            <option value="yes">Yes - Records on file</option>
-            <option value="pending">Pending - Will provide copy</option>
-            <option value="exempt">Exempt (Religious/Medical)</option>
-        </select>
-
-        <label>Any known allergies or dietary restrictions?</label>
-        <input type="text" name="allergies" placeholder="None or describe">
-
-        <label>Parent Signature</label>
-        <input type="text" name="health_signature" required>
-
-        <button type="submit">Submit Health Records</button>
+<div class="form-card">
+    <h1>4. Emergency Treatment Information and Authorization</h1>
+    <form action="https://formspree.io/f/xlgzrdnn" method="POST">
+        <label>Hospital Preference</label>
+        <input type="text" name="hospital">
+        <label>I authorize emergency treatment (Signature):</label>
+        <input type="text" name="emergency_auth_sig" required>
+        <button type="submit" class="submit-btn">Submit Form 4</button>
     </form>
+    <a href="form4.html" class="next-link">GO TO: Form 5 - Universal Child Health Record →</a>
+</div>
 </body>
 </html>
