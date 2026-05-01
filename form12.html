@@ -1,13 +1,110 @@
-<form action="thankyou.html" method="POST">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form 12: Parent Signature Form</title>
 
-<h1>Signature Page</h1>
+<style>
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+    background: #f4f7f6;
+}
 
-<label>Parent/Guardian Full Name (Signature)</label>
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.print-btn {
+    background: #3498db;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="form-card">
+
+<h1>Parent Signature & Receipt of Information</h1>
+
+<p>
+By signing below, you acknowledge that you have received, read, and agree to all enrollment and policy documents.
+</p>
+
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
+
+<label>Parent / Guardian Full Name</label>
+<input type="text" name="parent_name" required>
+
+<label>Child's Full Name</label>
+<input type="text" name="child_name" required>
+
+<label>Signature (Type Full Name)</label>
 <input type="text" name="signature" required>
 
 <label>Date</label>
 <input type="date" name="date" required>
 
-<button type="submit">Submit Enrollment</button>
+<label>
+<input type="checkbox" name="final_agreement" required>
+I confirm all information provided is accurate
+</label>
+
+<button type="submit">Submit Final Packet</button>
 
 </form>
+
+<!-- PRINT / DOWNLOAD OPTION -->
+<button class="print-btn" onclick="window.print()">
+Print / Save Copy
+</button>
+
+</div>
+
+</body>
+</html>
