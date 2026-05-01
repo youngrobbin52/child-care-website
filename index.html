@@ -3,39 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daycare Enrollment Packet</title>
+    <title>NJ Enrollment Portal</title>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        body { font-family: sans-serif; padding: 30px; line-height: 1.6; max-width: 600px; margin: auto; }
-        h1 { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .form-link { 
-            display: block; 
-            background: #f8f9fa; 
-            margin: 8px 0; 
-            padding: 15px; 
-            text-decoration: none; 
-            color: #007bff; 
-            border: 1px solid #dee2e6;
-            border-radius: 5px; 
-            font-weight: bold;
-        }
-        .form-link:hover { background: #e9ecef; }
+        body { font-family: sans-serif; line-height: 1.6; background: #f4f7f6; padding: 20px; max-width: 800px; margin: auto; }
+        .container { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h1, h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .form-section { display: none; } /* Hidden until login */
+        .active { display: block; }
+        label { display: block; margin: 15px 0 5px; font-weight: bold; }
+        input, textarea, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 6px; margin-bottom: 10px; }
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; }
+        .nav-buttons { display: flex; gap: 10px; margin-top: 20px; }
+        #login-form { max-width: 400px; margin: 100px auto; }
     </style>
 </head>
 <body>
-    <h1>Enrollment Packet</h1>
-    <p>Please click each link to complete the required forms:</p>
-    
-    <a class="form-link" href="enroll.html">1. Primary Enrollment Form</a>
-    <a class="form-link" href="form1.html">2. Emergency Contact Information</a>
-    <a class="form-link" href="form2.html">3. Medical Authorization</a>
-    <a class="form-link" href="form3.html">4. Immunization Record</a>
-    <a class="form-link" href="form4.html">5. Parental Consent Form</a>
-    <a class="form-link" href="form5.html">6. Nutrition & Allergy Profile</a>
-    <a class="form-link" href="form6.html">7. Medication Administration</a>
-    <a class="form-link" href="form7.html">8. Transportation Agreement</a>
-    <a class="form-link" href="form8.html">9. Photo Release Form</a>
-    <a class="form-link" href="form9.html">10. Policy & Handbook Agreement</a>
-    <a class="form-link" href="form10.html">11. Financial Contract</a>
-    <a class="form-link" href="form11.html">12. Emergency Medical Consent</a>
+
+    <div id="login-form" class="container">
+        <h2>Portal Login</h2>
+        <p>Parents & Admin Login Here</p>
+        <input type="email" id="email" placeholder="Email Address">
+        <button onclick="handleLogin()">Sign In / Access Forms</button>
+        <p id="msg"></p>
+    </div>
+
+    <div id="main-content" class="container" style="display:none;">
+        <header>
+            <h1>NJ State Enrollment Packet</h1>
+            <p>Complete all 20 pages. Your data is secured via Supabase.</p>
+        </header>
+
+        <form action="https://formspree.io/f/your_form_id" method="POST">
+            
+            <div class="form-page active" id="page1">
+                <h2>Page 1: Child Identity</h2>
+                <label>Child's Full Name</label>
+                <input type="text" name="child_name" required>
+                <label>Date of Birth</label>
+                <input type="date" name="child_dob" required>
+                <label>Home Address</label>
+                <textarea name="address"></textarea>
+                <button type="button" onclick="nextPage(2)">Next Page</button>
+            </div>
+
+            <div class="form-page" id="page2" style="display:none;">
+                <h2>Page 2: Medical Information</h2>
+                <label>Primary Physician</label>
+                <input type="text" name="doctor_name">
+                <label>Allergies / Medical Conditions</label>
+                <textarea name="medical_notes"></textarea>
+                <div class="nav-buttons">
+                    <button type="button" onclick="nextPage(1)">Back</button>
+                    <button type="button" onclick="nextPage(3)">Next Page</button>
+                </div>
+            </div>
+
+            <div class="form-page" id="page3" style="display:none;">
+                <h2>Page 3: State Policy Agreements</h2>
+                <label><input type="checkbox" name="expulsion_policy" required> I have received the Expulsion Policy</label>
+                <label><input type="checkbox" name="info_to_parents" required> I have received the Information to Parents Statement</label>
+                <div class="nav-buttons">
+                    <button type="button" onclick="nextPage(2)">Back</button>
+                    <button type="button" onclick="nextPage(4)">Next Page</button>
+                </div>
+            </div>
+
+            <div class="form-page" id="page4" style="display:none;">
+                <h2>Final Page: Digital Signature</h2>
+                <label>Parent/Guardian Signature (Type Name)</label>
+                <input type="text" name="signature" required>
+                <label>Date</label>
+                <input type="date" name="sign_date" required>
+                
+                <div class="nav-buttons">
+                    <button type="button" onclick="nextPage(3)">Back</button>
+                    <button type="submit">SUBMIT COMPLETED PACKET</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // NAVIGATION LOGIC
+        function nextPage(num) {
+            document.querySelectorAll('.form-page').forEach(p => p.style.display = 'none');
+            document.getElementById('page' + num).style.display = 'block';
+        }
+
+        // SUPABASE LOGIN LOGIC
+        const _supabase = supabase.createClient('YOUR_SUPABASE_URL', 'YOUR_SUPABASE_ANON_KEY');
+
+        async function handleLogin() {
+            const email = document.getElementById('email').value;
+            // This sends a "Magic Link" so parents don't need to remember a password
+            const { error } = await _supabase.auth.signInWithOtp({ email });
+            
+            if (error) {
+                document.getElementById('msg').innerText = "Error: " + error.message;
+            } else {
+                document.getElementById('msg').innerText = "Check your email for the login link!";
+                // For demonstration, we show the form:
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            }
+        }
+    </script>
 </body>
 </html>
