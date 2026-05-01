@@ -3,54 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enrollment Checklist</title>
+    <title>Form 1: Mandatory Child Information Checklist</title>
     <style>
-        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f9f9f9; }
-        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; }
-        .btn { display: inline-block; background: #3498db; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; margin-top: 5px; font-size: 14px; }
-        .pending { color: #e67e22; font-weight: bold; }
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 600px; margin: auto; background-color: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        .submit-btn { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 30px; cursor: pointer; }
+        .next-link { display: block; text-align: center; margin-top: 20px; color: #3498db; font-weight: bold; text-decoration: none; }
     </style>
 </head>
 <body>
-<div class="card">
-    <h1>Enrollment Checklist</h1>
-    <p>Please complete all 7 items below:</p>
-
-    <div class="item">
-        <span>1. Child Enrollment & History</span>
-        <a href="form1.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>2. Emergency Authorization</span>
-        <a href="form2.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>3. Health Records</span>
-        <a href="form3.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>4. Medication Consent</span>
-        <a href="form4.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>5. Transportation</span>
-        <a href="form5.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>6. Media Release</span>
-        <a href="form6.html" class="btn">Start</a>
-    </div>
-
-    <div class="item">
-        <span>7. Handbook Agreement</span>
-        <a href="form7.html" class="btn">Start</a>
-    </div>
+<div class="form-card">
+    <h1>1. Mandatory Child Information Checklist</h1>
+    <form action="https://formspree.io/f/xlgzrdnn" method="POST">
+        <label><input type="checkbox" name="chk_enroll" required> Enrollment Information</label>
+        <label><input type="checkbox" name="chk_health" required> Health Records</label>
+        <label><input type="checkbox" name="chk_immun" required> Immunization Records</label>
+        <button type="submit" class="submit-btn">Submit Form 1</button>
+    </form>
+    <a href="form1.html" class="next-link">GO TO: Form 2 - Child’s Enrollment Information →</a>
 </div>
 </body>
 </html>
