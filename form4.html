@@ -64,10 +64,11 @@ button {
 
 <p>Please complete emergency contact and medical authorization information.</p>
 
-<form action="https://formspree.io/f/xlgzrdnn" method="POST">
+<!-- FIXED: Using your new working ID -->
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
 
-<!-- sends to Form 5 -->
-<input type="hidden" name="_next" value="form5.html">
+<!-- FIXED: Full URL to move to Form 5 -->
+<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form5.html">
 
 <label>Emergency Contact Full Name</label>
 <input type="text" name="emergency_contact_name" required>
@@ -85,7 +86,7 @@ button {
 <textarea name="medical_conditions" rows="4"></textarea>
 
 <label>
-<input type="checkbox" name="consent" required>
+<input type="checkbox" name="consent" required style="width: auto; margin-right: 10px;">
 I authorize emergency medical treatment if necessary
 </label>
 
