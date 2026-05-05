@@ -76,7 +76,8 @@ button {
 By signing below, you acknowledge that you have received, read, and agree to all enrollment and policy documents.
 </p>
 
-<form action="https://formspree.io/f/xlgzrdnn" method="POST">
+<!-- FIXED: Using your new working ID -->
+<form action="https://formspree.io/f/xgodeqzv" method="POST">
 
 <label>Parent / Guardian Full Name</label>
 <input type="text" name="parent_name" required>
@@ -91,9 +92,12 @@ By signing below, you acknowledge that you have received, read, and agree to all
 <input type="date" name="date" required>
 
 <label>
-<input type="checkbox" name="final_agreement" required>
+<input type="checkbox" name="final_agreement" required style="width: auto; margin-right: 10px;">
 I confirm all information provided is accurate
 </label>
+
+<!-- Optional: Redirect to a Thank You page or your homepage after final submission -->
+<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/index.html">
 
 <button type="submit">Submit Final Packet</button>
 
