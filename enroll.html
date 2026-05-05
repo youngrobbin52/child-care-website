@@ -3,18 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form 1: Mandatory Child Information Checklist</title>
+<title>Child Care Enrollment Packet</title>
 
 <style>
 body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
+    font-family: Arial, sans-serif;
     background: #f4f7f6;
+    padding: 20px;
+    max-width: 700px;
+    margin: auto;
+    text-align: center;
 }
 
-.form-card {
+.card {
     background: white;
     padding: 30px;
     border-radius: 12px;
@@ -23,64 +24,49 @@ body {
 
 h1 {
     color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
 }
 
-ul {
+p {
+    font-size: 16px;
+    line-height: 1.6;
     margin-top: 15px;
 }
 
-label {
-    display: block;
-    margin-top: 20px;
+.button {
+    display: inline-block;
+    margin-top: 25px;
+    background: #27ae60;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 18px;
     font-weight: bold;
 }
 
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
+.button:hover {
+    background: #219150;
 }
 </style>
 </head>
 
 <body>
 
-<div class="form-card">
+<div class="card">
 
-<h1>Mandatory Child Information Checklist</h1>
+<h1>Child Care Enrollment Packet</h1>
 
-<p>Please confirm you have the following required information before continuing:</p>
+<p>
+Welcome. This enrollment packet contains all required forms for registration.
+Please complete each section carefully and in order.
+</p>
 
-<ul>
-    <li>Child’s full legal name</li>
-    <li>Date of birth</li>
-    <li>Home address</li>
-    <li>Emergency contact information</li>
-    <li>Medical and allergy information</li>
-</ul>
+<p>
+Click below to begin Form 1: Mandatory Child Information Checklist.
+</p>
 
-<!-- FIXED: Using your new working ID xgodeqzv -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<!-- REDIRECT TO FORM 2 -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form2.html">
-
-<label>
-<input type="checkbox" name="checklist_confirm" required style="width: auto; margin-right: 10px;">
-I confirm I have all required information ready
-</label>
-
-<button type="submit">Continue to Form 2</button>
-
-</form>
+<!-- This button leads to your first form file -->
+<a href="form1.html" class="button">Start Enrollment Packet</a>
 
 </div>
 
