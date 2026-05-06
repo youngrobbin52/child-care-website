@@ -25,7 +25,7 @@
         <label>Phone Number</label>
         <input type="tel" name="emergency_1_phone" required>
 
-        <hr style="margin-top:20px;">
+        <hr style="margin-top:20px; border: 0; border-top: 1px solid #eee;">
 
         <label>Secondary Emergency Contact Name</label>
         <input type="text" name="emergency_2_name">
@@ -39,19 +39,23 @@
 <script>
     const form = document.getElementById('enroll-form');
     const button = document.getElementById('submit-btn');
+    
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         button.disabled = true;
         button.innerText = "Saving...";
+        
         const formData = new FormData(form);
+        
         fetch("https://formspree.io/f/xgodeqzv", {
             method: "POST",
             body: formData,
             headers: { 'Accept': 'application/json' }
         }).then(() => {
-            window.location.href = "https://msrobbininhomechildcare.com/form4.html";
+            // This line MUST match your filename on GitHub exactly
+            window.location.href = "form4.html";
         }).catch(() => {
-            window.location.href = "https://msrobbininhomechildcare.com/form4.html";
+            window.location.href = "form4.html";
         });
     });
 </script>
