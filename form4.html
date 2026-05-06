@@ -1,100 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form 4: Emergency Treatment Authorization</title>
-
-<style>
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #f4f7f6;
-}
-
-.form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 4: Authorized Pickup</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 25px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
-
 <div class="form-card">
-
-<h1>Emergency Treatment Authorization</h1>
-
-<p>Please complete emergency contact and medical authorization information.</p>
-
-<!-- FIXED: Using your new working ID -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<!-- FIXED: Full URL to move to Form 5 -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form5.html">
-
-<label>Emergency Contact Full Name</label>
-<input type="text" name="emergency_contact_name" required>
-
-<label>Relationship to Child</label>
-<input type="text" name="emergency_relationship" required>
-
-<label>Emergency Phone Number</label>
-<input type="text" name="emergency_phone" required>
-
-<label>Authorized Hospital / Doctor</label>
-<input type="text" name="doctor_info">
-
-<label>Medical Conditions / Allergies</label>
-<textarea name="medical_conditions" rows="4"></textarea>
-
-<label>
-<input type="checkbox" name="consent" required style="width: auto; margin-right: 10px;">
-I authorize emergency medical treatment if necessary
-</label>
-
-<button type="submit">Continue to Form 5</button>
-
-</form>
-
+    <h1>Authorized Pickup List</h1>
+    <p>List persons authorized to pick up your child (other than parents).</p>
+    <form id="enroll-form">
+        <label>Authorized Person 1</label>
+        <input type="text" name="pickup_1" required>
+        <label>Authorized Person 2</label>
+        <input type="text" name="pickup_2">
+        <button type="submit" id="submit-btn">Continue to Form 5</button>
+    </form>
 </div>
-
+<script>
+    const form = document.getElementById('enroll-form');
+    const button = document.getElementById('submit-btn');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        button.disabled = true;
+        button.innerText = "Saving...";
+        const formData = new FormData(form);
+        fetch("https://formspree.io/f/xgodeqzv", {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        }).then(() => {
+            window.location.href = "https://msrobbininhomechildcare.com/form5.html";
+        }).catch(() => {
+            window.location.href = "https://msrobbininhomechildcare.com/form5.html";
+        });
+    });
+</script>
 </body>
 </html>
