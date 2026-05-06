@@ -11,53 +11,39 @@
         label { display: block; margin-top: 15px; font-weight: bold; }
         input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
         button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 25px; cursor: pointer; }
-        button:disabled { background: #95a5a6; }
     </style>
 </head>
 <body>
+
 <div class="form-card">
     <h1>Emergency Contact Information</h1>
-    <form id="enroll-form">
+    
+    <!-- Standard Formspree Action -->
+    <form action="https://formspree.io/f/xgodeqzv" method="POST">
+        
+        <!-- This line tells Formspree where to send the user next -->
+        <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form4.html">
+
         <label>Primary Emergency Contact Name</label>
         <input type="text" name="emergency_1_name" required>
+
         <label>Relationship to Child</label>
         <input type="text" name="emergency_1_rel" required>
+
         <label>Phone Number</label>
         <input type="tel" name="emergency_1_phone" required>
 
-        <hr style="margin-top:20px; border: 0; border-top: 1px solid #eee;">
+        <hr style="margin: 25px 0; border: 0; border-top: 1px solid #eee;">
 
         <label>Secondary Emergency Contact Name</label>
         <input type="text" name="emergency_2_name">
+
         <label>Phone Number</label>
         <input type="tel" name="emergency_2_phone">
 
-        <button type="submit" id="submit-btn">Continue to Form 4</button>
+        <button type="submit">Continue to Form 4</button>
     </form>
 </div>
 
-<script>
-    const form = document.getElementById('enroll-form');
-    const button = document.getElementById('submit-btn');
-    
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        button.disabled = true;
-        button.innerText = "Saving...";
-        
-        const formData = new FormData(form);
-        
-        fetch("https://formspree.io/f/xgodeqzv", {
-            method: "POST",
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(() => {
-            // This line MUST match your filename on GitHub exactly
-            window.location.href = "form4.html";
-        }).catch(() => {
-            window.location.href = "form4.html";
-        });
-    });
-</script>
 </body>
 </html>
