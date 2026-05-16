@@ -1,86 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form 11: Information to Parents (Page 2)</title>
-
-<style>
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #f4f7f6;
-}
-
-.form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-}
-
-p {
-    line-height: 1.6;
-    margin-top: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 11: FCC Information (Page 2)</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 20px; font-weight: bold; }
+        .info-section { background: #f9f9f9; padding: 15px; border-radius: 6px; font-size: 14px; line-height: 1.6; color: #333; }
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 25px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
 
 <div class="form-card">
+    <h1>Information to Parents Statement</h1>
+    <h3>Family Child Care (FCC) Registration - Page 2</h3>
+    
+    <div class="info-section">
+        <p>This section details mandated reporting requirements for suspected child abuse or neglect, state-regulated ratios, liability insurance information, and procedures to follow if a parent has an operational dispute or grievance regarding care conditions.</p>
+    </div>
 
-<h1>Information to Parents (Page 2)</h1>
+    <form action="https://formspree.io/f/xgodeqzv" method="POST">
+        <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form12.html">
 
-<p>
-This page continues important policies and procedures related to enrollment, care expectations, and program guidelines.
-</p>
+        <label style="font-weight: normal; margin-top: 25px; display: flex; align-items: flex-start;">
+            <input type="checkbox" name="fcc_p2_read" required style="margin-right: 12px;">
+            <span>I have read and reviewed Page 2 of the FCC Information to Parents Statement.</span>
+        </label>
 
-<p>
-By continuing, you acknowledge that you have reviewed all required program information.
-</p>
-
-<!-- FIXED: Using your new working ID -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<!-- FIXED: Full URL to move to the final Form 12 -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form12.html">
-
-<label>
-<input type="checkbox" name="final_read_confirm" required style="width: auto; margin-right: 10px;">
-I confirm I have read and understand all provided information
-</label>
-
-<button type="submit">Continue to Signature Form</button>
-
-</form>
-
+        <button type="submit">Continue to Final Receipt</button>
+    </form>
 </div>
 
 </body>
