@@ -1,86 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form 9: Social Media Policy</title>
-
-<style>
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #f4f7f6;
-}
-
-.form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-}
-
-p {
-    line-height: 1.6;
-    margin-top: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
-}
-</style>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 20px; font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 25px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
 
 <div class="form-card">
+    <h1>Social Media Policy</h1>
+    <p>Please select your privacy preferences regarding photos or updates of your child for childcare communication.</p>
+    
+    <form action="https://formspree.io/f/xgodeqzv" method="POST">
+        <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form10.html">
 
-<h1>Social Media Policy</h1>
+        <label style="margin-top: 20px;">Permission Level:</label>
+        <div style="margin-top: 10px;">
+            <input type="radio" id="sm_yes" name="social_media_permission" value="Yes" checked>
+            <label style="display:inline; font-weight:normal;" for="sm_yes">I ALLOW photos/videos of my child in childcare group updates.</label>
+        </div>
+        <div style="margin-top: 10px;">
+            <input type="radio" id="sm_no" name="social_media_permission" value="No">
+            <label style="display:inline; font-weight:normal;" for="sm_no">I DO NOT WANT any photos/videos of my child shared.</label>
+        </div>
 
-<p>
-This policy outlines guidelines regarding photography, video recording, and social media use within the childcare program.
-</p>
+        <label>Parent/Guardian Digital Signature</label>
+        <input type="text" name="signature_form9" required placeholder="Type full name">
 
-<p>
-Parents must understand that no images or videos of children may be shared publicly without written consent from the program.
-</p>
-
-<!-- FIXED: Using your new working ID -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<!-- FIXED: Full URL to move to Form 10 -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form10.html">
-
-<label>
-<input type="checkbox" name="policy_acknowledged" required style="width: auto; margin-right: 10px;">
-I acknowledge and agree to the Social Media Policy
-</label>
-
-<button type="submit">Continue to Form 10</button>
-
-</form>
-
+        <button type="submit">Continue to Form 10</button>
+    </form>
 </div>
 
 </body>
