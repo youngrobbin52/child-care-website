@@ -1,113 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form 12: Parent Signature Form</title>
-
-<style>
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #f4f7f6;
-}
-
-.form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-}
-
-p {
-    line-height: 1.6;
-    margin-top: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 20px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 20px;
-    cursor: pointer;
-}
-
-.print-btn {
-    background: #3498db;
-    margin-top: 10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 12: Final Signature Receipt</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
+        h1 { color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 10px; }
+        label { display: block; margin-top: 20px; font-weight: bold; text-align: left; }
+        input[type="text"] { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #e74c3c; color: white; padding: 18px; border: none; border-radius: 5px; width: 100%; font-size: 20px; margin-top: 30px; cursor: pointer; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
 <div class="form-card">
+    <h1>Final Receipt & Submission</h1>
+    <p style="text-align: left; color: #555;">By providing your electronic signature below, you verify receipt of the official Information to Parents Statement required for state FCC registration, completing your full digital registration folder.</p>
+    
+    <form action="https://formspree.io/f/xgodeqzv" method="POST">
+        <!-- Redirects beautifully back to your main website home page -->
+        <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/">
 
-<h1>Parent Signature & Receipt of Information</h1>
+        <label>Date Signed</label>
+        <input type="text" name="receipt_date" required placeholder="MM/DD/YYYY">
 
-<p>
-By signing below, you acknowledge that you have received, read, and agree to all enrollment and policy documents.
-</p>
+        <label>Official Parent/Guardian Digital Signature</label>
+        <input type="text" name="final_fcc_signature" required placeholder="Type full name to sign">
 
-<!-- FIXED: Using your new working ID -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<label>Parent / Guardian Full Name</label>
-<input type="text" name="parent_name" required>
-
-<label>Child's Full Name</label>
-<input type="text" name="child_name" required>
-
-<label>Signature (Type Full Name)</label>
-<input type="text" name="signature" required>
-
-<label>Date</label>
-<input type="date" name="date" required>
-
-<label>
-<input type="checkbox" name="final_agreement" required style="width: auto; margin-right: 10px;">
-I confirm all information provided is accurate
-</label>
-
-<!-- Optional: Redirect to a Thank You page or your homepage after final submission -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/index.html">
-
-<button type="submit">Submit Final Packet</button>
-
-</form>
-
-<!-- PRINT / DOWNLOAD OPTION -->
-<button class="print-btn" onclick="window.print()">
-Print / Save Copy
-</button>
-
+        <button type="submit">Submit Complete Enrollment Packet 🎉</button>
+    </form>
 </div>
 
 </body>
