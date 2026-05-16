@@ -1,93 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Form 8: Religious Exemption from Immunizations</title>
-
-<style>
-body {
-    font-family: sans-serif;
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: #f4f7f6;
-}
-
-.form-card {
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-}
-
-label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button {
-    background: #27ae60;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 18px;
-    margin-top: 25px;
-    cursor: pointer;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 8: Religious Exemption</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 600px; margin: auto; background: #f4f7f6; }
+        .form-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        label { display: block; margin-top: 20px; font-weight: bold; }
+        input[type="text"] { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #27ae60; color: white; padding: 15px; border: none; border-radius: 5px; width: 100%; font-size: 18px; margin-top: 25px; cursor: pointer; }
+    </style>
 </head>
-
 <body>
 
 <div class="form-card">
+    <h1>Religious Exemption From Immunizations</h1>
+    <p>Complete this section <em>only</em> if immunizations interfere with the free exercise of your religious beliefs.</p>
+    
+    <form action="https://formspree.io/f/xgodeqzv" method="POST">
+        <input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form9.html">
 
-<h1>Religious Exemption from Immunizations</h1>
+        <label style="font-weight: normal; margin-top: 20px; display: flex; align-items: flex-start;">
+            <input type="checkbox" name="religious_exempt_statement" style="margin-right: 12px; margin-top: 4px;">
+            <span>Check here if you are claiming a religious exemption for your child according to state regulations. (Leave blank if N/A)</span>
+        </label>
 
-<p>Please complete this form if you are requesting a religious exemption.</p>
+        <label>Parent/Guardian Digital Signature</label>
+        <input type="text" name="signature_form8" required placeholder="Type full name">
 
-<!-- FIXED: Using your new working ID -->
-<form action="https://formspree.io/f/xgodeqzv" method="POST">
-
-<!-- FIXED: Full URL to move to Form 9 -->
-<input type="hidden" name="_next" value="https://msrobbininhomechildcare.com/form9.html">
-
-<label>Child's Full Name</label>
-<input type="text" name="child_name" required>
-
-<label>Date of Birth</label>
-<input type="date" name="dob" required>
-
-<label>Religious Belief Statement</label>
-<textarea name="religious_statement" rows="5" required></textarea>
-
-<label>
-<input type="checkbox" name="acknowledgment" required style="width: auto; margin-right: 10px;">
-I confirm this exemption request is truthful and accurate
-</label>
-
-<button type="submit">Continue to Form 9</button>
-
-</form>
-
+        <button type="submit">Continue to Form 9</button>
+    </form>
 </div>
 
 </body>
